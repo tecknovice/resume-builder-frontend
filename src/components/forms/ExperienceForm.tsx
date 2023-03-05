@@ -1,6 +1,7 @@
 import { Box, Button, TextField, Typography } from "@mui/material";
 import { Controller, useFormContext, useFieldArray } from "react-hook-form";
 import { Resume } from "../../interfaces/resume";
+import { JobDescriptionsComponent } from "./JobDescriptions";
 
 export function ExperienceForm() {
   const { control } = useFormContext<Resume>();
@@ -56,7 +57,7 @@ export function ExperienceForm() {
               />
             )}
           />
-          <Controller
+          {/* <Controller
             name={`experiences.${index}.jobDescription`}
             control={control}
             render={({ field }) => (
@@ -68,10 +69,19 @@ export function ExperienceForm() {
                 {...field}
               />
             )}
+          /> */}
+          <JobDescriptionsComponent
+            control={control}
+            name={`experiences.${index}.jobDescriptions`}
           />
         </Box>
       ))}
-      <Button variant="contained" fullWidth   sx={{ mt: "8px" }} onClick={() => append({})}>
+      <Button
+        variant="contained"
+        fullWidth
+        sx={{ mt: "8px" }}
+        onClick={() => append({})}
+      >
         Add
       </Button>
     </>

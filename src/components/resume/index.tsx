@@ -28,39 +28,36 @@ export function ResumeComponent() {
       }}
     >
       {getValues("information") && (
-        
-          <Box
-            display={"flex"}
-            flexDirection="column"
-            alignItems={"center"}
-            py="8px"
-          >
-            <Typography variant="h3">
-              {getValues("information.name")}
-            </Typography>
-            <Typography variant="subtitle1">
-              {getValues("information.mobile")}
-            </Typography>
-            <Typography variant="subtitle1">
-              {getValues("information.email")}
-            </Typography>
-            {getValues("information.github") && (
-              <Box display={"flex"} alignItems="center">
-                <GitHub />
-                <Typography variant="subtitle1">
-                  {getValues("information.github")}
-                </Typography>
-              </Box>
-            )}
-            {getValues("information.linkedIn") && (
-              <Box display={"flex"} alignItems="center">
-                <LinkedIn />
-                <Typography variant="subtitle1">
-                  {getValues("information.linkedIn")}
-                </Typography>
-              </Box>
-            )}
-          </Box>
+        <Box
+          display={"flex"}
+          flexDirection="column"
+          alignItems={"center"}
+          py="8px"
+        >
+          <Typography variant="h3">{getValues("information.name")}</Typography>
+          <Typography variant="subtitle1">
+            {getValues("information.mobile")}
+          </Typography>
+          <Typography variant="subtitle1">
+            {getValues("information.email")}
+          </Typography>
+          {getValues("information.github") && (
+            <Box display={"flex"} alignItems="center">
+              <GitHub />
+              <Typography variant="subtitle1">
+                {getValues("information.github")}
+              </Typography>
+            </Box>
+          )}
+          {getValues("information.linkedIn") && (
+            <Box display={"flex"} alignItems="center">
+              <LinkedIn />
+              <Typography variant="subtitle1">
+                {getValues("information.linkedIn")}
+              </Typography>
+            </Box>
+          )}
+        </Box>
       )}
       {getValues("summary") && (
         <Box py="8px">
@@ -80,11 +77,11 @@ export function ResumeComponent() {
             <Typography marginRight={1}>{exp.jobTitle}</Typography>
             <Typography>{exp.period}</Typography>
           </Box>
-          {exp.jobDescription && (
-            <ListItem sx={{ display: "list-item" }}>
-              {exp.jobDescription}
+          {exp.jobDescriptions?.map((jd, subIndex) => (
+            <ListItem sx={{ display: "list-item" }} key={subIndex}>
+              {jd}
             </ListItem>
-          )}
+          ))}
         </Box>
       ))}
       {getValues("education") && (

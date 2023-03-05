@@ -10,7 +10,7 @@ export interface Experience {
   jobTitle?: string;
   company?: string;
   period?: string;
-  jobDescription?: string;
+  jobDescriptions?: string[];
 }
 
 export interface Education {
