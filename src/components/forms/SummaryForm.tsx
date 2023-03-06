@@ -12,7 +12,7 @@ export function SummaryForm() {
       render={({ field }) => (
         <TextField
           multiline
-          label="Smmary"
+          label="Summary"
           variant="outlined"
           fullWidth
           {...field}

@@ -19,19 +19,6 @@ export function ExperienceForm() {
         >
           <Typography>Company {index + 1}</Typography>
           <Controller
-            name={`experiences.${index}.jobTitle`}
-            control={control}
-            render={({ field }) => (
-              <TextField
-                variant="outlined"
-                margin="normal"
-                fullWidth
-                label="jobTitle"
-                {...field}
-              />
-            )}
-          />
-          <Controller
             name={`experiences.${index}.company`}
             control={control}
             render={({ field }) => (
@@ -40,6 +27,19 @@ export function ExperienceForm() {
                 margin="normal"
                 fullWidth
                 label="company"
+                {...field}
+              />
+            )}
+          />
+          <Controller
+            name={`experiences.${index}.jobTitle`}
+            control={control}
+            render={({ field }) => (
+              <TextField
+                variant="outlined"
+                margin="normal"
+                fullWidth
+                label="jobTitle"
                 {...field}
               />
             )}

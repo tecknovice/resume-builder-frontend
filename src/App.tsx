@@ -22,8 +22,8 @@ function App() {
             </form>
           </Paper>
         </Box>
-        <Box width="75%" padding={"50px 100px"}>
-          <ResumeComponent />
+        <Box width="75%">
+          <ResumeComponent/>
         </Box>
       </Box>
     </FormProvider>
